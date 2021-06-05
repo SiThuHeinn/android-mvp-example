@@ -5,5 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface ApiHelper {
-    suspend fun fetchMovies() : Flow<BaseResponse>
+    suspend fun fetchMovies() : BaseResponse
+
+    suspend fun search(title : String, year : Int) : BaseResponse
 }

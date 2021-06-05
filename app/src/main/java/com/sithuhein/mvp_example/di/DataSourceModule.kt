@@ -2,13 +2,12 @@ package com.sithuhein.mvp_example.di
 
 import com.sithuhein.mvp_example.main.repository.localDataSource.LocalDataSource
 import com.sithuhein.mvp_example.main.repository.localDataSource.LocalDataSourceImpl
-import com.sithuhein.mvp_example.main.repository.remoteDataSource.RemoteDataSource
-import com.sithuhein.mvp_example.main.repository.remoteDataSource.RemoteDataSourceImpl
+import com.sithuhein.mvp_example.search.repository.RemoteSearchDataSource
+import com.sithuhein.mvp_example.search.repository.RemoteSearchDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.components.SingletonComponent
 
 
 @Module
@@ -16,10 +15,10 @@ import dagger.hilt.components.SingletonComponent
 abstract class DataSourceModule {
 
     @Binds
-    abstract fun bindRemoteData(remoteDataSourceImpl: RemoteDataSourceImpl) : RemoteDataSource
-
+    abstract fun bindLocalData(localDataSourceImpl: LocalDataSourceImpl) : LocalDataSource
 
     @Binds
-    abstract fun bindLocalData(localDataSourceImpl: LocalDataSourceImpl) : LocalDataSource
+    abstract fun bindRemoteSearchDataSource(remoteSearchDataSourceImpl: RemoteSearchDataSourceImpl) : RemoteSearchDataSource
+
 
 }

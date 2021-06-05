@@ -22,5 +22,5 @@ data class Movie(
     val releaseDate : String,
     @ColumnInfo(name = "poster_path")
     @SerializedName("poster_path")
-    val poster : String
+    val poster : String?
 )

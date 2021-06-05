@@ -7,4 +7,6 @@ import javax.inject.Inject
 
 class ApiHelperImpl @Inject constructor(private val apiService: ApiService): ApiHelper {
     override suspend fun fetchMovies() = apiService.fetchMovies()
+
+    override suspend fun search(title: String, year: Int) = apiService.searchMovie(title, year)
 }
